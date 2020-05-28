@@ -722,7 +722,7 @@ if __name__ == "__main__":
     try:
         if args.restart_from:
             first_epoch = args.restart_from + 1
-            print(f"restarting from epoch {first_epoch}")
+            logging(f"restarting from epoch {first_epoch}")
         else:
             first_epoch = 1
         run_training()
