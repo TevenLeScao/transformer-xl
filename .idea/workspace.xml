@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cfb35159-ff7a-4757-97bd-0495309c4938" name="Default Changelist" comment="optimizer update tests">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/transformer-xl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/app_requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/bokeh_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/conversions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/static/formula_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/static/formula_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/static/loss_vs_compute.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/optimal_training/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch/writeup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytorch/optimal_app/conversions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytorch/optimal_app/optimal_training.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytorch/optimal_app/utils.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1a5DjP3KrmhLfvVHQKUwG65Acbt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pytorch/optimal_app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.optimal_training">
+    <configuration name="gpu_perf_vs_shape" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="transformer-xl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytorch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch/gpu_perf_vs_shape.py" />
+      <option name="PARAMETERS" value="-l 1 2 4 9 12 16 20 25 -d 16 32 64 128 256 -b 1 5 10 20 60 --fp16 O2" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="optimal_training" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="transformer-xl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytorch/optimal_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch/optimal_app/optimal_training.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="transformer-xl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytorch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch/train.py" />
+      <option name="PARAMETERS" value="--data ../data/wikitext-103/ --dataset wt103 --adaptive --n_layer 1 --d_model 45 --n_head 5 --d_head 9 --d_inner 67 --dropout 0.0 --dropatt 0.0 --optim adam --lr 0.00005 --warmup_step 0 --max_step 3300 --tgt_len 150 --mem_len 150 --eval_tgt_len 150 --batch_size 20 --log-interval 50 --eval-interval 1000 --cuda --fp16 O2 --knockknock" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="gpu_perf_grid.sh" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/pytorch/gpu_perf_grid.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/pytorch" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.train" />
+      <item itemvalue="Python.gpu_perf_vs_shape" />
+      <item itemvalue="Python.optimal_training" />
+      <item itemvalue="Shell Script.gpu_perf_grid.sh" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.optimal_training" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Shell Script.gpu_perf_grid.sh" />
+        <item itemvalue="Python.gpu_perf_vs_shape" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfb35159-ff7a-4757-97bd-0495309c4938" name="Default Changelist" comment="" />
+      <created>1586016695140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586016695140</updated>
+    </task>
+    <task id="LOCAL-00003" summary="training script refactor">
+      <created>1587406766231</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587406766231</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test_loss + expanding mode;">
+      <created>1587411915124</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587411915124</updated>
+    </task>
+    <task id="LOCAL-00005" summary="proper expansion dict parsing">
+      <created>1587415212525</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587415212525</updated>
+    </task>
+    <task id="LOCAL-00006" summary="expand after epoch">
+      <created>1587416602484</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587416602484</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed import bug">
+      <created>1587416714954</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587416714954</updated>
+    </task>
+    <task id="LOCAL-00008" summary="removed torchviz">
+      <created>1587416763830</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587416763830</updated>
+    </task>
+    <task id="LOCAL-00009" summary="logging instead of printing">
+      <created>1587416880709</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587416880709</updated>
+    </task>
+    <task id="LOCAL-00010" summary="double evaluation">
+      <created>1587417177171</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587417177171</updated>
+    </task>
+    <task id="LOCAL-00011" summary="removed reset_length">
+      <created>1587430801780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587430801780</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed scheduling for FP16">
+      <created>1587431843596</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587431843596</updated>
+    </task>
+    <task id="LOCAL-00013" summary="removed reset_length 2">
+      <created>1587432952968</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587432952968</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed reinit expansion">
+      <created>1587433519021</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587433519021</updated>
+    </task>
+    <task id="LOCAL-00015" summary="double eval">
+      <created>1587433812560</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1587433812560</updated>
+    </task>
+    <task id="LOCAL-00016" summary="optimizer update tests">
+      <created>1587484745960</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587484745960</updated>
+    </task>
+    <task id="LOCAL-00017" summary="unified optimizer param groups learning rates">
+      <created>1587568588311</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587568588311</updated>
+    </task>
+    <task id="LOCAL-00018" summary="expand after train">
+      <created>1587568839328</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1587568839328</updated>
+    </task>
+    <task id="LOCAL-00019" summary="proper load/restart">
+      <created>1587577125506</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1587577125506</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixed DataParallel bug">
+      <created>1587577765550</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1587577765550</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed argparse int/str bug">
+      <created>1587597054461</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1587597054461</updated>
+    </task>
+    <task id="LOCAL-00022" summary="reverse distillation">
+      <created>1587658227465</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1587658227465</updated>
+    </task>
+    <task id="LOCAL-00023" summary="storing reverse_distil logits on cpu to avoid mem issues">
+      <created>1587725516158</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1587725516158</updated>
+    </task>
+    <task id="LOCAL-00024" summary="freeze countdown">
+      <created>1587833440098</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1587833440098</updated>
+    </task>
+    <task id="LOCAL-00025" summary="proper thawing">
+      <created>1587833927328</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1587833927328</updated>
+    </task>
+    <task id="LOCAL-00026" summary="parallel-compatible thawing">
+      <created>1587834323478</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1587834323478</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fixed optimizer reloading error">
+      <created>1587981668698</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1587981668698</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added layer duplication">
+      <created>1588165272407</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1588165272407</updated>
+    </task>
+    <task id="LOCAL-00029" summary="reinstated pre-expansion validation">
+      <created>1588167818916</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1588167818916</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added reset_lr option">
+      <created>1588213070865</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1588213070865</updated>
+    </task>
+    <task id="LOCAL-00031" summary="backwards compatible model reloading">
+      <created>1588250175177</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1588250175177</updated>
+    </task>
+    <task id="LOCAL-00032" summary="training with full reset">
+      <created>1588345459640</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1588345459641</updated>
+    </task>
+    <task id="LOCAL-00033" summary="proper lr reset">
+      <created>1588352928535</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1588352928535</updated>
+    </task>
+    <task id="LOCAL-00034" summary="proper lr reset">
+      <created>1588354348639</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1588354348639</updated>
+    </task>
+    <task id="LOCAL-00035" summary="model add_heads + widen pipeline, new arguments in argparsing.py">
+      <created>1588644222939</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1588644222939</updated>
+    </task>
+    <task id="LOCAL-00036" summary="optimizer state update">
+      <created>1588647056584</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1588647056584</updated>
+    </task>
+    <task id="LOCAL-00037" summary="added compute measurement experiments">
+      <created>1589044129737</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1589044129737</updated>
+    </task>
+    <task id="LOCAL-00038" summary="knockknock">
+      <created>1589111480438</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1589111480438</updated>
+    </task>
+    <task id="LOCAL-00039" summary="removed exposed webhook">
+      <created>1589113689071</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1589113689071</updated>
+    </task>
+    <task id="LOCAL-00040" summary="proper fp16">
+      <created>1589983959381</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1589983959381</updated>
+    </task>
+    <task id="LOCAL-00041" summary="light args refactor">
+      <created>1589993908379</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1589993908379</updated>
+    </task>
+    <task id="LOCAL-00042" summary="gpu perf benchmark">
+      <created>1590050818669</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1590050818669</updated>
+    </task>
+    <task id="LOCAL-00043" summary="benchmark script">
+      <created>1590050910782</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1590050910782</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added sh script and reloading">
+      <created>1590078070773</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1590078070773</updated>
+    </task>
+    <task id="LOCAL-00045" summary="bash script with proper memory handling">
+      <created>1590141261225</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1590141261225</updated>
+    </task>
+    <task id="LOCAL-00046" summary="impact tracking after reload check">
+      <created>1590360412095</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1590360412095</updated>
+    </task>
+    <task id="LOCAL-00047" summary="removed debug printout">
+      <created>1590360457166</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1590360457166</updated>
+    </task>
+    <task id="LOCAL-00048" summary="better impact tracker logging">
+      <created>1590361323060</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1590361323060</updated>
+    </task>
+    <task id="LOCAL-00049" summary="updated grid script">
+      <created>1590362342776</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1590362342776</updated>
+    </task>
+    <task id="LOCAL-00050" summary="data loading after checking">
+      <created>1590396729245</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1590396729245</updated>
+    </task>
+    <task id="LOCAL-00051" summary="compute applet">
+      <created>1590690836166</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1590690836167</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed optimizer reloading error" />
+    <MESSAGE value="added layer duplication" />
+    <MESSAGE value="reinstated pre-expansion validation" />
+    <MESSAGE value="added reset_lr option" />
+    <MESSAGE value="backwards compatible model reloading" />
+    <MESSAGE value="training with full reset" />
+    <MESSAGE value="proper lr reset" />
+    <MESSAGE value="model add_heads + widen pipeline, new arguments in argparsing.py" />
+    <MESSAGE value="optimizer state update" />
+    <MESSAGE value="argparsing updated for new wandb project" />
+    <MESSAGE value="added compute measurement experiments" />
+    <MESSAGE value="knockknock" />
+    <MESSAGE value="removed exposed webhook" />
+    <MESSAGE value="proper fp16" />
+    <MESSAGE value="light args refactor" />
+    <MESSAGE value="gpu perf benchmark" />
+    <MESSAGE value="benchmark script" />
+    <MESSAGE value="added sh script and reloading" />
+    <MESSAGE value="bash script with proper memory handling" />
+    <MESSAGE value="impact tracking after reload check" />
+    <MESSAGE value="removed debug printout" />
+    <MESSAGE value="better impact tracker logging" />
+    <MESSAGE value="updated grid script" />
+    <MESSAGE value="data loading after checking" />
+    <MESSAGE value="compute applet" />
+    <option name="LAST_COMMIT_MESSAGE" value="compute applet" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2644" y="394" key="#Notifications" timestamp="1587159669466">
+      <screen x="0" y="0" width="3600" height="1040" />
+    </state>
+    <state x="2644" y="394" key="#Notifications/0.0.3600.1040@0.0.3600.1040" timestamp="1587159669466" />
+    <state x="584" y="1237" width="1272" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590674704188">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113626496" />
+    <state x="836" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1589375581682" />
+    <state x="2343" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587061389321" />
+    <state x="584" y="151" width="1272" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590432127391" />
+    <state x="0" y="0" width="1920" height="1040" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3600.1040@0.0.3600.1040" timestamp="1588645616936" />
+    <state x="584" y="1237" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590674704188" />
+    <state x="744" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1589980233492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="744" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589980233492" />
+    <state x="771" y="1492" width="378" height="568" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1590948343461">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="771" y="1492" width="378" height="568" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590948343461" />
+    <state x="0" y="0" width="1920" height="1040" key="#xdebugger.evaluate" timestamp="1589994863718">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1438" y="226" key="#xdebugger.evaluate/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588692375115" />
+    <state x="0" y="0" width="1920" height="1040" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1589994863718" />
+    <state x="1079" y="324" key="#xdebugger.evaluate/0.0.3600.1040@0.0.3600.1040" timestamp="1588647012114" />
+    <state x="648" y="1177" width="1272" height="689" key="CommitChangelistDialog2" timestamp="1590690836025">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="306" y="12" width="1272" height="689" key="CommitChangelistDialog2/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113688996" />
+    <state x="1192" y="93" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588250175050" />
+    <state x="1190" y="93" width="728" height="867" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590396729085" />
+    <state x="1029" y="106" key="CommitChangelistDialog2/0.0.3600.1040@0.0.3600.1040" timestamp="1588647056535" />
+    <state x="648" y="1177" key="CommitChangelistDialog2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590690836025" />
+    <state width="692" height="506" key="DebuggerActiveHint" timestamp="1588685451268">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="692" height="506" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588685451268" />
+    <state x="2020" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1587027295427">
+      <screen x="0" y="0" width="3600" height="1040" />
+    </state>
+    <state x="2020" y="100" width="1480" height="850" key="DiffContextDialog/0.0.3600.1040@0.0.3600.1040" timestamp="1587027295427" />
+    <state x="744" y="1367" width="432" height="483" key="FileChooserDialogImpl" timestamp="1591260535158">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="744" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1589382485693" />
+    <state x="744" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587660775162" />
+    <state x="744" y="1367" width="432" height="483" key="FileChooserDialogImpl/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1591260535158" />
+    <state width="1920" height="222" key="GridCell.Tab.0.bottom" timestamp="1590595824400">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113665110" />
+    <state width="1897" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474166" />
+    <state width="1657" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587064263924" />
+    <state width="1897" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908265" />
+    <state width="1897" height="278" key="GridCell.Tab.0.bottom/0.0.3600.1040@0.0.3600.1040" timestamp="1588647031937" />
+    <state width="1920" height="222" key="GridCell.Tab.0.bottom/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590595824400" />
+    <state width="1920" height="222" key="GridCell.Tab.0.center" timestamp="1590595824400">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="205" key="GridCell.Tab.0.center/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113665110" />
+    <state width="1897" height="278" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474166" />
+    <state width="1657" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587064263924" />
+    <state width="1897" height="339" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908265" />
+    <state width="1897" height="278" key="GridCell.Tab.0.center/0.0.3600.1040@0.0.3600.1040" timestamp="1588647031936" />
+    <state width="1920" height="222" key="GridCell.Tab.0.center/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590595824400" />
+    <state width="1920" height="222" key="GridCell.Tab.0.left" timestamp="1590595824400">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="205" key="GridCell.Tab.0.left/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113665110" />
+    <state width="1897" height="278" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474166" />
+    <state width="1657" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587064263924" />
+    <state width="1897" height="339" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908265" />
+    <state width="1897" height="278" key="GridCell.Tab.0.left/0.0.3600.1040@0.0.3600.1040" timestamp="1588647031936" />
+    <state width="1920" height="222" key="GridCell.Tab.0.left/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590595824400" />
+    <state width="1920" height="222" key="GridCell.Tab.0.right" timestamp="1590595824400">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="205" key="GridCell.Tab.0.right/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113665110" />
+    <state width="1897" height="278" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474166" />
+    <state width="1657" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587064263924" />
+    <state width="1897" height="339" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908265" />
+    <state width="1897" height="278" key="GridCell.Tab.0.right/0.0.3600.1040@0.0.3600.1040" timestamp="1588647031936" />
+    <state width="1920" height="222" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590595824400" />
+    <state width="1897" height="339" key="GridCell.Tab.1.bottom" timestamp="1590359908266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474167" />
+    <state width="1657" height="304" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587052211607" />
+    <state width="1897" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908266" />
+    <state width="1897" height="278" key="GridCell.Tab.1.bottom/0.0.3600.1040@0.0.3600.1040" timestamp="1588647029641" />
+    <state width="1897" height="339" key="GridCell.Tab.1.center" timestamp="1590359908265">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474167" />
+    <state width="1657" height="304" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587052211607" />
+    <state width="1897" height="339" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908265" />
+    <state width="1897" height="278" key="GridCell.Tab.1.center/0.0.3600.1040@0.0.3600.1040" timestamp="1588647029641" />
+    <state width="1897" height="339" key="GridCell.Tab.1.left" timestamp="1590359908265">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474166" />
+    <state width="1657" height="304" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587052211607" />
+    <state width="1897" height="339" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908265" />
+    <state width="1897" height="278" key="GridCell.Tab.1.left/0.0.3600.1040@0.0.3600.1040" timestamp="1588647029641" />
+    <state width="1897" height="339" key="GridCell.Tab.1.right" timestamp="1590359908266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588693474167" />
+    <state width="1657" height="304" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587052211607" />
+    <state width="1897" height="339" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590359908266" />
+    <state width="1897" height="278" key="GridCell.Tab.1.right/0.0.3600.1040@0.0.3600.1040" timestamp="1588647029641" />
+    <state x="457" y="1239" key="SettingsEditor" timestamp="1591087991329">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="457" y="153" key="SettingsEditor/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1586016717169" />
+    <state x="457" y="1239" key="SettingsEditor/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1591087991329" />
+    <state x="1112" y="1351" key="Vcs.Push.Dialog.v2" timestamp="1590690838529">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="1112" y="261" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.0.1024.768@0.0.1920.1040" timestamp="1589113690447" />
+    <state x="1112" y="261" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588250177186" />
+    <state x="1112" y="261" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590396730748" />
+    <state x="2356" y="261" key="Vcs.Push.Dialog.v2/0.0.3600.1040@0.0.3600.1040" timestamp="1588647058986" />
+    <state x="1112" y="1351" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1590690838529" />
+    <state width="448" height="525" key="XDebugger.FullValuePopup" timestamp="1589994861323">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="448" height="525" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1589994861323" />
+    <state width="840" height="525" key="XDebugger.FullValuePopup/0.0.3600.1040@0.0.3600.1040" timestamp="1587481839627" />
+    <state x="2439" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1586348582423">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2439" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1586348582423" />
+    <state x="316" y="1588" width="881" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591290432499">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="2553" y="440" width="411" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587396600872" />
+    <state x="316" y="997" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.2120@0.0.1920.2120" timestamp="1590504373421" />
+    <state x="592" y="489" width="881" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3600.1040@0.0.3600.1040" timestamp="1587654547761" />
+    <state x="316" y="1588" width="881" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1591290432499" />
+    <state x="1034" y="235" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588686227695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1034" y="235" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1588686227695" />
+    <state x="2317" y="235" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.3600.1040@0.0.3600.1040" timestamp="1588645254118" />
+    <state x="101" y="257" width="1669" height="1000" key="dock-window-1" timestamp="1587481695002">
+      <screen x="0" y="0" width="3600" height="1040" />
+    </state>
+    <state x="101" y="257" width="1669" height="1000" key="dock-window-1/0.0.3600.1040@0.0.3600.1040" timestamp="1587481695002" />
+    <state x="994" y="153" width="738" height="776" key="find.popup" timestamp="1587569143485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="994" y="153" width="738" height="776" key="find.popup/0.0.1920.1040/1920.0.1680.1050@0.0.1920.1040" timestamp="1587569143485" />
+    <state x="2437" y="133" width="645" height="783" key="find.popup/0.0.1920.1040/1920.0.1680.1050@1920.0.1680.1050" timestamp="1587390274065" />
+    <state x="1246" y="1321" width="672" height="705" key="search.everywhere.popup" timestamp="1591100345585">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="2423" y="232" width="672" height="678" key="search.everywhere.popup/0.0.3600.1040@0.0.3600.1040" timestamp="1587138088613" />
+    <state x="1246" y="1321" width="672" height="705" key="search.everywhere.popup/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1591100345585" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/train.py</url>
+          <line>420</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>821</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>749</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>720</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/train.py</url>
+          <line>419</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>888</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>892</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>893</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/mem_transformer.py</url>
+          <line>894</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
