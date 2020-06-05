@@ -66,7 +66,7 @@ loss_plot = figure(plot_height=plot_height, plot_width=plot_width,
                    y_range=[min(all_points[:, 1]), max(all_points[:, 1])],
                    x_axis_type="log", y_axis_type="log",
                    x_axis_label="Floating-point operations (excluding embeddings & softmax)",
-                   y_axis_label="Validation loss on Wikitext-103")
+                   y_axis_label="Validation loss on Wikitext-103", output_backend="webgl")
 loss_plot.add_tools(CrosshairTool(dimensions="width", line_alpha=0.2))
 loss_plot.add_layout(color_bar, "left")
 # for i, run in indexed_runs.items():
@@ -118,7 +118,7 @@ param_plot = figure(plot_height=plot_height, plot_width=plot_width,
                     y_range=[min(params_per_run), max(params_per_run)],
                     x_axis_type="log", y_axis_type="log",
                     x_axis_label="Floating-point operations (excluding embeddings & softmax)",
-                    y_axis_label="Optimal number of non-embedding parameters")
+                    y_axis_label="Optimal number of non-embedding parameters", output_backend="webgl")
 param_plot.add_tools(CrosshairTool(dimensions="width", line_alpha=0.2))
 param_plot.add_layout(color_bar, "left")
 
@@ -413,7 +413,7 @@ in_text_loss_plot = figure(plot_height=in_text_plot_height, plot_width=in_text_p
                            y_range=[min(all_points[:, 1]), max(all_points[:, 1])],
                            x_axis_type="log", y_axis_type="log",
                            x_axis_label="Floating-point operations (excluding embeddings & softmax)",
-                           y_axis_label="Validation loss on Wikitext-103")
+                           y_axis_label="Validation loss on Wikitext-103", output_backend="webgl")
 in_text_loss_plot.add_layout(color_bar, "left")
 in_text_loss_plot.align = "center"
 
@@ -444,7 +444,7 @@ in_text_param_plot = figure(plot_height=in_text_plot_height, plot_width=in_text_
                             y_range=[min(params_per_run), max(params_per_run)],
                             x_axis_type="log", y_axis_type="log",
                             x_axis_label="Floating-point operations (excluding embeddings & softmax)",
-                            y_axis_label="Optimal number of non-embedding parameters")
+                            y_axis_label="Optimal number of non-embedding parameters", output_backend="webgl")
 in_text_param_plot.add_layout(color_bar, "left")
 in_text_param_plot.align = "center"
 # for i, run_apex in enumerate(compute_at_hull):

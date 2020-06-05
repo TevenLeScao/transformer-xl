@@ -52,7 +52,7 @@ md3 = """
 <h2 id="2-gpus-are-optimized-for-large-wide-models">2. GPUs are optimized for large, wide models</h2>
 <p>Not that we have established a rule connecting performance, optimal size, and neFLOs, we need to translate it into a more actionable metric. Whether you are constrained by temporal or financial constraints, the main resource is GPU time. In order to establish a connection between neFLOs and GPU time, we benchmarked different Transformer-XL model sizes on 4 different GPUs available on Google Cloud Platform across tens of thousands of runs, taking into account mixed precision training. Here are our findings:</p>
 <h5 id="speed-model">Speed model</h5>
-<img class='center' style='height: 1.25em;' src='optimal_training/static/formula_1.png' alt='formula_1'>
+<img class='center' style='height: 1.25em;' src='https://raw.githubusercontent.com/TevenLeScao/transformer-xl/master/pytorch/assets/formula_1.png' alt='formula_1'>
 <p>neFLOs per second speed can be modeled as a factorized multivariate function of model width (the number of neurons per layer), depth (the number of layers) and batch size, by increasing order of importance. <strong>The maximum prediction error was 15% of the observed speed.</strong></p>
 <h5 id="width">Width</h5>
 <p>GPUs are optimized for the large feed-forward layers of wide transformers. In all of our experiments, neFLOs per second depended on model width as <strong>a power law of exponent around 1.6</strong>. This means that a model that&#39;s twice as wide, which requires 4 times more operations, also goes through those operations around 3.16 times faster, <strong>nearly offsetting the additional compute cost</strong>.</p>
@@ -63,7 +63,7 @@ md3 = """
 <h5 id="powers-of-2-still-matter-in-2020">Powers of 2 still matter in 2020!</h5>
 <p>Finally, one surprising takeaway was that <strong>hyperparameters whose width or batch size were powers of 2 out-performed the others</strong>. That was the case both using <code>torch.backends.cudnn.benchmark</code> to speed up training on the V100 (this requires multiples of 8) and on other GPUs. In the end, we only fitted on powers of 2 as fitting on all data points meant a poor fit quality that consistently under-estimated speed for powers of 2 points, and one might as well choose the fastest parameters.</p>
 <p>In the end, our final estimation of operation speed was as follows:</p>
-<img class='center' style='height: 2.5em;' src='optimal_training/static/formula_2.png' alt='formula_2'>
+<img class='center' style='height: 2.5em;' src='https://raw.githubusercontent.com/TevenLeScao/transformer-xl/master/pytorch/assets/formula_2.png' alt='formula_2'>
 <p>with, for example on a V100 GPU without mixed precision, k=2.21*10<sup>7</sup>, a=1.66, b=5.92, and c=1.33. Different GPUs had close results with a different multiplicative constant.</p>
 <h2 id="3-demonstration-on-a-language-modeling-task-wikitext-103">3. <a name="demo">Demonstration on a language modeling task: Wikitext-103</a></h2>
 <p>Now that we have a relation between model size and training speed, we can predict, for a certain GPU time or price budget, the optimal model size on the task and the performance it will achieve.</p>
@@ -76,7 +76,8 @@ md4 = """<p>Prices are indicated for Google Cloud Platform. The energy consumpti
 <ul>
 <li>Big models are surprisingly efficient!</li>
 <li>Training until convergence is not efficient at all.</li>
-<li>To lower training costs, you should benchmark your model as you do your hyperparameter search to know when to stop.</li>
+<li>As you repeat runs, either during development or hyperparameter, analyze how performance scales with neFLOs and benchmark the speed of different model hyperparameters. </li>
+<li>Once you've done that, optimal stopping can reduce your training costs to a fraction of what they would be with usual early stopping techniques. </li>
 </ul>
 
 """

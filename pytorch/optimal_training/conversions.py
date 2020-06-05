@@ -59,11 +59,17 @@ def flo_speed(features, constants):
     return k * np.power(k1, o1) * np.power(k2, o2) * x / (x + layer_base) * np.power(y, b) * np.power(np.log(z + 1), c)
 
 
-def param_polynomial(width, depth=None):
+def param_polynomial(width, depth=None, inner=None):
     if depth is not None:
-        return 7 * depth * (width ** 2) + 8 * depth * width + 3 * width + 3
+        if inner is not None:
+            return 5 * depth * (width ** 2) + 2 * depth * (width * inner) + 7 * depth * width + depth * inner + 3 * width + 3
+        else:
+            return 7 * depth * (width ** 2) + 8 * depth * width + 3 * width + 3
     else:
-        return 7 / depth_width_ratio * (width ** 3) + 8 / depth_width_ratio * (width ** 2) + 3 * width + 3
+        if inner is not None:
+            return 5 * depth_width_ratio * (width ** 3) + 2 * depth_width_ratio * (width ** 2 * inner) + 7 * depth_width_ratio * width ** 2 + depth_width_ratio * width * inner + 3 * width + 3
+        else:
+            return 7 / depth_width_ratio * (width ** 3) + 8 / depth_width_ratio * (width ** 2) + 3 * width + 3
 
 
 def optimal_model_shape(width, param_number, base=8):
