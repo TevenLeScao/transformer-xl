@@ -230,7 +230,6 @@ def epoch_loop(epoch, model, optimizers, schedulers):
     for batch, (data, target, seq_len) in enumerate(train_iter):
         model.zero_grad()
         if args.batch_chunk > 1:
-            batch_losses = []
             data_chunks = torch.chunk(data, args.batch_chunk, 1)
             target_chunks = torch.chunk(target, args.batch_chunk, 1)
             for i in range(args.batch_chunk):
@@ -238,15 +237,13 @@ def epoch_loop(epoch, model, optimizers, schedulers):
                 target_i = target_chunks[i].contiguous()
                 ret = model(data_i, target_i, *mems[i])
                 loss, mems[i] = ret[0], ret[1:]
-                loss = loss.float().mean().type_as(loss)
-                batch_losses.append(loss)
-            batch_loss = torch.stack(batch_losses).mean()
-            if args.fp16:
-                with amp.scale_loss(batch_loss, optimizer) as scaled_loss:
-                    scaled_loss.backward()
-            else:
-                batch_loss.backward()
-                train_losses.append(batch_loss.float().item())
+                loss = loss.float().mean().type_as(loss) / args.batch_chunk
+                if args.fp16:
+                    with amp.scale_loss(loss, optimizer) as scaled_loss:
+                        scaled_loss.backward()
+                else:
+                    loss.backward()
+                train_losses.append(loss.float().item() * args.batch_chunk)
         else:
             ret = model(data, target, *mems)
             loss, mems = ret[0], ret[1:]
@@ -470,20 +467,17 @@ def fit_to_previous_model(model, new_layers, tr_iter, first_logits, integration)
             break
         model.zero_grad()
         if args.batch_chunk > 1:
-            batch_losses = []
             data_chunks = torch.chunk(data, args.batch_chunk, 1)
             for i in range(args.batch_chunk):
                 data_i = data_chunks[i].contiguous()
                 logits, mems[i] = model._forward(data_i, mems=mems[i])
                 target_logits = first_logits[i][batch].to(logits.device)
-                loss = mse_loss(logits, target_logits)
-                batch_losses.append(loss)
-            batch_loss = torch.stack(batch_losses).mean()
-            if args.fp16:
-                with amp.scale_loss(batch_loss, optimizer) as scaled_loss:
-                    scaled_loss.backward()
-            else:
-                batch_loss.backward()
+                loss = mse_loss(logits, target_logits) / args.batch_chunk
+                if args.fp16:
+                    with amp.scale_loss(loss, distil_optimizer) as scaled_loss:
+                        scaled_loss.backward()
+                else:
+                    loss.backward()
         else:
             logits, mems = model._forward(data, mems=mems)
             target_logits = first_logits[batch].to(logits.device)
