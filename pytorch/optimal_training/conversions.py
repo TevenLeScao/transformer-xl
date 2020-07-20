@@ -50,7 +50,7 @@ gpu_consumption = {
     "P100": 139.65e-3
 }
 
-co2_intensity = 315 * 1e-6
+co2_intensity = 534 * 1e-3
 
 
 def flo_speed(features, constants):
@@ -82,7 +82,7 @@ def optimal_model_shape(width, param_number, base=8):
 
 def alternate_model_shape(width, param_number, base=8):
     linear_depth = max(1, math.floor(width / depth_width_ratio))
-    depth = max(linear_depth + 1, math.floor(0.4 * width ** 1.2 / depth_width_ratio))
+    depth = max(linear_depth + 1, math.floor(0.3 * width ** 1.25 / depth_width_ratio))
     poly_params = np.array([depth * 7, depth * 8 + 3, 3 - param_number])
     roots = np.roots(poly_params)
     corresponding_width = int(base * round(max(roots) / base))
@@ -145,11 +145,11 @@ def dollars_to_hours(dollars, gpu):
 
 
 def hours_to_kWh(hours, gpu):
-    return hours * 3600 * gpu_consumption[gpu]
+    return hours * gpu_consumption[gpu]
 
 
 def hours_to_co2(hours, gpu):
-    return hours * 3600 * gpu_consumption[gpu] * co2_intensity
+    return hours * gpu_consumption[gpu] * co2_intensity
 
 
 def loss_to_flo(loss, a, b, c):

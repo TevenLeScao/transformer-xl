@@ -8,7 +8,6 @@ from bokeh.transform import log_cmap
 import pandas as pd
 from scipy.spatial import ConvexHull
 from scipy.optimize import curve_fit
-from time import sleep
 
 from utils import *
 from conversions import *
@@ -83,7 +82,7 @@ loss_plot.multi_line('xs', 'ys', source=source,
                      color=log_cmap('params', palette, min(params_per_run), max(params_per_run)))
 source = ColumnDataSource(data=dict(
     x=[compute for run in indexed_runs for compute in run[:, 0] * day_ratio],  # x coords for each line (list of lists)
-    y=[loss for run in indexed_runs for loss in run[:, 1] ],  # y coords for each line (list of lists)
+    y=[loss for run in indexed_runs for loss in run[:, 1]],  # y coords for each line (list of lists)
     params=[repeated_params for i, params in enumerate(params_per_run)
             for repeated_params in [params] * len(indexed_runs[i])]  # data to use for colormapping
 ))
@@ -176,10 +175,10 @@ input_buffer = Div(text="", width=sidebar_width, height=10,
                           "text-align": 'center'})
 top_sidebar_div_style = {"display": "block", "margin": "0 auto", 'font-size': "125%",
                          "width": f"{sidebar_width}px", "text-align": 'center'}
-kWh_text = Div(text=kWh_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value)), width=sidebar_width, height=45,
-               style=top_sidebar_div_style)
-co2_text = Div(text=co2_fill(hours_to_co2(hours_slider.value, gpu_dropdown.value)), width=sidebar_width, height=45,
-               style=top_sidebar_div_style)
+energy_text = Div(text=energy_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value),
+                                   hours_to_co2(hours_slider.value, gpu_dropdown.value)),
+                  width=sidebar_width, height=45,
+                  style=top_sidebar_div_style)
 slider_moves = {"hours": 0, "dollars": 0, "kWh": 0, "co2": 0}
 n_sliders = len(slider_moves)
 
@@ -258,8 +257,8 @@ def hours_update(attrname, old, new):
     # if hours was the first updated slider
     if sum(slider_moves.values()) <= n_sliders * slider_moves["hours"] - n_sliders + 1:
         dollars_slider.value = hours_to_dollars(hours_slider.value, gpu_dropdown.value)
-        kWh_text.text = kWh_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value))
-        co2_text.text = co2_fill(hours_to_co2(hours_slider.value, gpu_dropdown.value))
+        energy_text.text = energy_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value),
+                                           hours_to_co2(hours_slider.value, gpu_dropdown.value))
 
     width = hours_to_width(hours_slider.value, gpu_dropdown.value, amp_mode_dropdown.value, param_popt)
     update_width(width)
@@ -271,8 +270,8 @@ def dollars_update(attrname, old, new):
     # if hours was the first updated slider
     if sum(slider_moves.values()) <= n_sliders * slider_moves["dollars"] - n_sliders + 1:
         hours_slider.value = dollars_to_hours(dollars_slider.value, gpu_dropdown.value)
-        kWh_text.text = kWh_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value))
-        co2_text.text = co2_fill(hours_to_co2(hours_slider.value, gpu_dropdown.value))
+        energy_text.text = energy_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value),
+                                           hours_to_co2(hours_slider.value, gpu_dropdown.value))
 
 
 def gpu_update(attrname, old, new):
@@ -286,8 +285,8 @@ def gpu_update(attrname, old, new):
     else:
         dollars_slider.end = hours_to_dollars(hours_end, new)
         hours_slider.value = dollars_to_hours(dollars_slider.value, gpu_dropdown.value)
-    kWh_text.text = kWh_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value))
-    co2_text.text = co2_fill(hours_to_co2(hours_slider.value, gpu_dropdown.value))
+    energy_text.text = energy_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value),
+                                       hours_to_co2(hours_slider.value, gpu_dropdown.value))
 
 
 def amp_update(attrname, old, new):
@@ -297,8 +296,8 @@ def amp_update(attrname, old, new):
     hours_slider.start = tip["hours"]
     dollars_slider.start = hours_to_dollars(tip["hours"], gpu_dropdown.value)
     compare_and_update(width)
-    kWh_text.text = kWh_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value))
-    co2_text.text = co2_fill(hours_to_co2(hours_slider.value, gpu_dropdown.value))
+    energy_text.text = energy_fill(hours_to_kWh(hours_slider.value, gpu_dropdown.value),
+                                       hours_to_co2(hours_slider.value, gpu_dropdown.value))
 
 
 def loss_tap(event):
@@ -426,12 +425,12 @@ in_text_loss_plot.multi_line('xs', 'ys', source=source,
                              color=log_cmap('params', palette, min(params_per_run), max(params_per_run)))
 source = ColumnDataSource(data=dict(
     x=[compute for run in indexed_runs for compute in run[:, 0] * day_ratio],  # x coords for each line (list of lists)
-    y=[loss for run in indexed_runs for loss in run[:, 1] ],  # y coords for each line (list of lists)
+    y=[loss for run in indexed_runs for loss in run[:, 1]],  # y coords for each line (list of lists)
     params=[repeated_params for i, params in enumerate(params_per_run)
             for repeated_params in [params] * len(indexed_runs[i])]  # data to use for colormapping
 ))
 in_text_loss_plot.scatter('x', 'y', source=source,
-                  color=log_cmap('params', palette, min(params_per_run), max(params_per_run)), size=3)
+                          color=log_cmap('params', palette, min(params_per_run), max(params_per_run)), size=3)
 # for i, run in indexed_runs.items():
 #     source = ColumnDataSource(data=dict(x=run[:, 0] * day_ratio, y=run[:, 1]))
 #     in_text_loss_plot.line('x', 'y', source=source, line_width=1, line_alpha=0.6, color=color_list[i])
@@ -489,8 +488,8 @@ after_text = column(text_4)
 # Set up layouts and add to document
 ########################################################################################################################
 
-inputs = column(input_text, gpu_dropdown, amp_mode_dropdown, hours_slider, dollars_slider, input_buffer, kWh_text,
-                co2_text, sizing_mode="scale_width", width=sidebar_width, height=plot_height)
+inputs = column(input_text, gpu_dropdown, amp_mode_dropdown, hours_slider, dollars_slider, input_buffer, energy_text,
+                sizing_mode="scale_width", width=sidebar_width, height=plot_height)
 
 results = column(static_loss_text,
                  optimal_loss_text,
